@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    font-family: "Press Start 2P", sans-serif;
+    color: #f0f0f0;
+}
+.title {
+    font-size: 42px;
+    color: #fff;
+    text-shadow: 6px 6px 12px #1a1a1a;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#InformatioBar {
+    position: relative; 
+    height: 80px;
+    background-color: #444;
+    border-bottom: 5px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {    
+    #InformatioBar {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    #InformatioBar .score, #InformatioBar .timer {
+        margin: 5px 0;
+    }
+
+    .title
+    {
+        display: none;
+    }
+
+}
+
+#ball {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    background-color: #d900ff;
+    border-radius: 50%;
+    border: 3px solid #8a129f;
+    box-shadow: 0 0 15px #a73fba90;
+    transform: translateX(-50%);
+    transition: transform 0.1s;
+}
+
+#platform {
+    width: 60px;
+    height: 8px;
+    position: absolute;
+    border-radius: 6px;
+    bottom: 70px;
+    transform: translateX(-50%);
+    left:50%;
+    border: 2px solid #0d47a1;
+    background-color: #2196f3;
+    box-shadow: 0px -5px 10px rgba(0, 0, 255, 0.7),
+                0px 0px 15px rgba(0, 0, 255, 0.5);
+    transition: transform 0.1s;
+    transition: background-color 10s ease;
+}
+
+#containergame {
+    background: radial-gradient(circle at center, #282c34, #121212);
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    touch-action: none;
+    cursor: none;
+}
+
+#dashedLine {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 60px;
+    left: 0;
+    background: repeating-linear-gradient(
+        to right,
+        #ff5252,
+        #ff5252 20px,
+        transparent 20px,
+        transparent 40px
+    );
+}
+
+.gameoverzone {
+    position: absolute;
+    height: 62px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.5));
+    bottom: 0;
+}
+
+.block {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    transition: transform 0.1s, background-color 0.3s;
+}
+
+@media (max-width: 600px) {
+    #platform {
+        width: 70px;
+    }
+}
+
+.scoreText {
+    font-size: 16px;
+    font-weight: bold;
+    color:teal;
+    text-shadow: 1px 1px 4px #000;
+    margin: 10px;
+}
+
+#score {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff99;
+    text-shadow: 1px 1px 5px #005f3f;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #333;
+    border: 2px solid #00cc88; 
+    margin-left: 5px;
+}
+@media (max-width: 600px) {
+    .scoreText {
+        font-size: 14px; 
+        margin: 5px; 
+    }
+
+    #score {
+        font-size: 16px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        border: 2px solid #00cc88;
+        margin-left: 5px;
+    }
+}
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+#timer {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+#audioButton {
+    background-color: #444;
+    border-radius: 10px;
+    border-width: 3px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+#audioButton:hover {
+    background-color: teal;    
+    border-bottom: 3px solid rgb(1, 45, 45);
+    border-right: 3px solid rgb(1, 45, 45);
+    border-top: 3px solid rgb(2, 178, 178);
+    border-left: 3px solid rgb(2, 178, 178);
+}
+
+#musicSVG
+{
+    width: 25px;
+    height: 25px;
+}
+
+.bgsettings
+{
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.463);
+    position: absolute;
+}
+
+#settings {
+    width: 500px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(max-width: 600px)
+{
+    #settings
+    {
+        width: 425px;;
+    }
+}
+
+#settings h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#settingsForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+select {
+    font-family: "Press Start 2P", sans-serif;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 11px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #444;
+    color: #fff;
+    appearance: none;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button {
+    background-color: #555;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 14px;
+    margin-top: 40px;
+    transition: transform 1s ease;
+}
+
+button:hover {
+    color:#fff;
+    background-color: #777;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 60px);
+    gap: 15px;
+    justify-items: center;
+}
+
+.pattern-option {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.pattern-option img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #444;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pattern-option img:hover {
+    border-color: #00a86b;
+    transform: scale(1.05);
+}
+
+.pattern-option:hover {
+    transform: scale(1.1);
+}
+
+.pattern-option.active img {
+    border-color: #00a86b;
+}
+
+h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0px;
+}
+.modal {
+    display: flex;   
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content > button
+{
+    margin-top: 20px;
+}

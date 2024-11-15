@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Game</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/object.css">
+    <link rel="icon" href="img/site-icon.png">
+</head>
+<body>    
+    <div id="menu" class="main-menu">
+        <div class="bgrngr"></div>
+
+        <canvas id="gameBackground"></canvas>
+        <div id="ball"></div>
+        <div id="platform"></div>
+
+        <div class="menu-content">
+            <h1>Breakout Game</h1>
+            <div class="name-input-container">
+                <input type="text" id="playerName" class="name-input" placeholder="Введіть ваше ім'я:">
+            </div>
+            <button onclick="GoToGame()">Грати</button>
+            <button onclick="openInstruction()">Інструкція</button>
+        </div>
+
+        <div id="dashedLine"></div>
+        <div class="gameoverzone"></div>
+    </div>
+
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <span class="closebtn" onclick="closeInstruction()">&times;</span>
+            <h2>Інструкція до гри Breakout</h2>
+            <p>
+                Вітаємо у грі Breakout! Мета гри — знищити всі блоки на екрані, використовуючи м'яч, який відскакує від платформи. Використовуйте клавіші стрілок або мишу, щоб рухати платформу і не дати м'ячу впасти.
+            </p>
+            <ul>
+                <li>Для руху платформи використовуйте клавіші стрілок вліво/вправ або мишу.</li>
+                <li>Кожен знищений блок дає бали.</li>
+                <li>Якщо м'яч впаде з екрану, ви втратите життя.</li>
+                <li>Перемога досягається, коли всі блоки знищені.</li>
+            </ul>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AMUv8KvVt08?si=gGispoIbGwiQsTwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <button onclick="closeInstruction()">Закрити</button>
+        </div>
+    </div>
+    <footer>Гру зробив <a target="_blank" href="https://github.com/Samecodpp">Володимир</a></footer>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

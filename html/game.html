@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="../styles/game.css">
+    <link rel="icon" href="../img/site-icon.png">
+    <title>Breakout Game</title>
+</head>
+<body>
+
+    <div id="settings">
+        <h2>Налаштування гри</h2>
+
+        <label>Складність:</label>
+        <select id="difficulty" onfocus="changeFocusColor()">
+            <option value="easy">Легкий</option>
+            <option value="medium">Середній</option>
+            <option value="hard">Важкий</option>
+        </select>
+        <br><br>
+
+        <label>Типи патернів:</label>
+        <div id="patternType">
+            <div class="pattern-grid">
+                <div class="pattern-option" data-pattern="rectangle">
+                    <img src="../img/Rect-pattern.png" alt="Rectangle Pattern" class="pattern-img">
+                </div>
+                <div></div>
+                <div class="pattern-option" data-pattern="unique">
+                    <img src="../img/Unique-pattern.png" alt="Unique Pattern" class="pattern-img">
+                </div>
+                <div></div>
+                <div class="pattern-option" data-pattern="column">
+                    <img src="../img/Colomns-pattern.png" alt="Column Pattern" class="pattern-img">
+                </div>
+                <div></div>
+                <div class="pattern-option" data-pattern="zigzag">
+                    <img src="../img/Rows-pattern.png" alt="Zigzag Pattern" class="pattern-img">
+                </div>
+                <div></div>
+                <div class="pattern-option" data-pattern="pyramid">
+                    <img src="../img/Piramid-pattern.png" alt="Pyramid Pattern" class="pattern-img">
+                </div>
+            </div>
+            <br><br>
+        </div>
+
+        <button id="startGameButton">Розпочати</button>
+    </div>
+
+    <div id="InformatioBar">
+        <button id="audioButton"><img id="musicSVG" src="../img/volume-xmark-svgrepo-com.svg" alt=""></button>
+        <audio id="backgroundMusic" loop>
+            <source src="../audio/Glaze - Pixel Rush.mp3" type="audio/mpeg">
+        </audio>
+        <h1 class="title">BreakOut</h1>
+        <div class="info-container">
+            <p class="scoreText">Очки: <span id="score" class="scoreText">0</span></p>
+            <p><span id="timer">0:00</span></p>
+        </div>
+    </div>
+
+    <div id="containergame">    
+        <div id="bgsett" class="bgsettings"></div>
+        <div id="ball"></div>
+        <div id="platform"></div>
+        <div id="dashedLine"></div>
+        <div class="gameoverzone"></div>
+    </div>
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <h2>Результати гри</h2>
+            <p id="playerNameDisplay"></p>
+            <p>Час: <span id="gameTime"></span></p>
+            <p>Очки: <span id="gameScore"></span></p>
+            <p id="gameResult"></p>
+            <button onclick="window.location.href = '../index.html'" id="restartBtn">На головне меню</button>
+        </div>
+    </div>
+    <audio id="overgameMusic">
+        <source id="overgameMusicSrc" src="../audio/You Failed!.mp3" type="audio/mpeg">
+    </audio>
+    <script type="module" src="../scripts/game.js"></script>
+</body>
+</html>
