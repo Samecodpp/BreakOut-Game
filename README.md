@@ -12,6 +12,10 @@ A simple and customizable BreakOut game built with JavaScript, CSS, and HTML. Th
 - Move paddle: Arrow keys or mouse
 - Backgraund music: Buttons on game-bar menu
 
+Click her to play in this game:
+
+[![Play BreakOut Game](https://breakoutio.netlify.app/)
+
 ### Enjoy breaking blocks!
 
-  Note: This project is my independent work for an educational institution.
+Note: This project is my independent work for an educational institution.
