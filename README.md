@@ -1,16 +1,16 @@
 # BreakOut Game
 
-A simple and customizable BreakOut game built with JavaScript, CSS, and HTML. The game involves controlling a paddle to bounce a ball and break blocks. Players can adjust settings like difficulty and patterns in the main menu.
+A simple and customizable BreakOut game built with JavaScript, CSS, and HTML. The game involves controlling a paddle to bounce a ball and break blocks. Players can adjust settings like difficulty and patterns before start the game.
 
 ## Features
 - Classic block-breaking mechanics
 - Difficulty levels (easy, medium, hard)
-- Adjustable patterns and color themes
+- 5 patterns to choose from
 - Score tracking and timer
 
 ## Controls
 - Move paddle: Arrow keys or mouse
-- Backgraund music: Buttons on game-bar menu
+- Background music: Buttons on game-bar menu to play/stop background music
 
 Click her to play in this game:
 
