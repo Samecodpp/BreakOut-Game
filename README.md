@@ -14,7 +14,7 @@ A simple and customizable BreakOut game built with JavaScript, CSS, and HTML. Th
 
 Click her to play in this game:
 
-[![Play BreakOut Game](https://breakoutio.netlify.app/)
+[![Play BreakOut Game](https://img.shields.io/badge/Play%20Game-Click%20Here-brightgreen?style=for-the-badge)](https://breakoutio.netlify.app/)
 
 ### Enjoy breaking blocks!
 
